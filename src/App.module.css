@@ -1,0 +1,35 @@
+body {
+    background-color:  white;
+    -webkit-box-shadow:  inset 0px 0px 83px -1px rgba(97,110,194,0.36);
+    -moz-box-shadow:     inset 0px 0px 83px -1px rgba(97,110,194,0.36);
+    box-shadow:          inset 0px 0px 83px -1px rgba(97,110,194,0.36);
+    height:              100%;
+
+}
+
+.container {
+
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    padding: 10pt 10pt 10pt 10pt;
+    flex-direction: column;
+}
+
+.image{
+    width : 20%;
+    margin: 0 auto;
+    margin-top: 2%;
+    margin-bottom: 0%;
+}
+
+@media (max-width:770px) {
+
+    .container {
+        margin : 0 10%;
+    }
+
+    .image {
+        width: 100%
+    }
+}
