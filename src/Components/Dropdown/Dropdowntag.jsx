@@ -1,22 +1,30 @@
 import React, {Component} from 'react';
-import { fetchDistrictName, fetchDailyData } from '../../api';
-import {Select, Grommet} from 'grommet';
+import {Select} from 'grommet';
+import styles from './Dropdowntag.module.css'
 
 
 class Dropdowntag extends Component {
+    
+    state = {
+        selected: "Jharkhand"
+    }
 
+    render(props)
+    {   if(!this.props.droplist) return '';
+       
+        const statePicker = (
 
+        <div className={styles.container} >
+            {
+                <Select className={styles.dropdown}
+                options={this.props.droplist}
+                value={this.state.selected}
+                onChange={({ option }) => {this.setState({selected: option}); this.props.handleProvinceChangeAppjs(option)} } ></Select>
+            }
+          </div>
+        )
+            return <div>{statePicker}</div>;
+    }   
 
-render()
-{
-
-    const dataDownloaded = fetchDistrictName()
-    if(!dataDownloaded) return <div>Failed to load dropdown</div>
-    console.log(dataDownloaded)
-
-    return <div>dodo</div>;
-
-}
-
-}
+}//class ends
 export default Dropdowntag;

@@ -1,9 +1,9 @@
 body {
-    background-color:  white;
+    background-color:    white;
     -webkit-box-shadow:  inset 0px 0px 83px -1px rgba(97,110,194,0.36);
     -moz-box-shadow:     inset 0px 0px 83px -1px rgba(97,110,194,0.36);
     box-shadow:          inset 0px 0px 83px -1px rgba(97,110,194,0.36);
-    height:              100%;
+    height:              auto;
 
 }
 

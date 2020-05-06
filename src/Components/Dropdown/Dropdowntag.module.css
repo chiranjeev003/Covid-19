@@ -1,6 +1,13 @@
 .container {
 
-    /*border: 1px solid black;*/
-    padding-top : 2%;
-    padding-left: 20%;
+    /* border: 1px solid black; */
+    margin-left  :  1.5% !important;
+    margin-bottom :  5% !important; 
+
+    padding-top: 1.5%;
+    
+}
+
+.dropdown {
+    
 }

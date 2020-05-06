@@ -1,12 +1,12 @@
 .container {
-    padding: 1.5%;   
+    padding: 1%;   
    /* border: 1px solid black; */
 
 }
 
 .card {
     margin: 1% 1.5% !important;
-    width: 50pt;   
+    width: 30px !important;   
 
     box-shadow:
     0 2.8px 2.2px rgba(0, 0, 0, 0.034),
@@ -20,14 +20,22 @@
 
 .infectedcard {
     border-bottom: 10px solid red;
+    background-color: rgba(255,50,50,0.03) !important;
+}
+
+.activecard {
+    border-bottom: 10px solid blue;
+    background-color: rgba(50,50,255,0.03) !important;
 }
 
 .recoveredcard {
     border-bottom: 10px solid rgb(55, 245, 55);
+    background-color: rgba(50,255,50,0.03) !important;
 }
 
 .deathscard {
     border-bottom: 10px solid gray;
+    background-color: rgba(0,0,0,0.02) !important;
 }
 
 @media (max-width:770px) {

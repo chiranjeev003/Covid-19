@@ -11,9 +11,10 @@ const cardMakerFN = (cardname, finalNumber, lastUpdatedate, countryyy,) => {
     let cssclass = styles.infectedcard;
     if(cardname=== "Recovered")     cssclass = styles.recoveredcard;
     if(cardname=== "Deaths")           cssclass = styles.deathscard;
+    if(cardname=== "Active")           cssclass = styles.activecard;
   
     const returnable = (
-     <Grid item component={Card} xs={12} md={3} className={cx(styles.card, cssclass )}>
+     <Grid item component={Card} xs={12} md={2} className={cx(styles.card, cssclass )}>
          <CardContent>
             <Typography color="textSecondary" gutterbottom>{cardname}</Typography>
             <Typography variant="h5" >
@@ -31,20 +32,23 @@ const cardMakerFN = (cardname, finalNumber, lastUpdatedate, countryyy,) => {
 }
 
 const Cards = (props) => {
+    if(!props.data.confirmed) return '';
 
     //#1-defining the cards below by calling cardMakerFN()
     let infCard       = cardMakerFN( "Infected",  props.data.confirmed, props.data.lastUpdate, props.country);
     let recoveredCard = cardMakerFN( "Recovered", props.data.recovered, props.data.lastUpdate, props.country);
     let deathsCard    = cardMakerFN( "Deaths",    props.data.deaths,    props.data.lastUpdate, props.country);
+    let activeCard    = cardMakerFN( "Active",    props.data.confirmed-props.data.recovered-props.data.deaths, props.data.lastUpdate, props.country);
+    
     //#1 
     //if data isnt availaible yet, show 'loading'
-   if(!props.data.confirmed) return '';
+   
 
    //Grid tag is necessary wrapper to all three cards. So all cards are returned inside it <Grid  container....
     let totalReturnable = ( 
         <div>
-            <Grid  container spacing={3} justify="center" className={styles.container}>
-            {infCard} {recoveredCard} {deathsCard}
+            <Grid  container spacing={2} justify="center" className={styles.container}>
+            {infCard} {activeCard} {recoveredCard} {deathsCard}
             </Grid>
         </div>
     );
